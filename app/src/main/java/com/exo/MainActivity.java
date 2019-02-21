@@ -1,6 +1,5 @@
 package com.exo;
 
-import android.media.session.PlaybackState;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -39,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
     private final  String TAG = getClass().getSimpleName();
     private SimpleExoPlayer player;
     private PlayerView playerView;
-    private String status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,22 +82,7 @@ public class MainActivity extends AppCompatActivity {
             public void onPlayerStateChanged(boolean playWhenReady, int playbackState) {
                 Log.d(TAG, "onPlayerStateChanged: ");
                 switch (playbackState) {
-
-//                    case Player.STATE_BUFFERING:
-//                        status = PlaybackStatus.LOADING;
-//                        break;
-//                    case Player.STATE_ENDED:
-//                        status = PlaybackStatus.STOPPED;
-//                        break;
-//                    case Player.STATE_IDLE:
-//                        status = PlaybackStatus.IDLE;
-//                        break;
-//                    case Player.STATE_READY:
-//                        status = playWhenReady ? PlaybackStatus.PLAYING : PlaybackStatus.PAUSED;
-//                        break;
-//                    default:
-//                        status = PlaybackStatus.IDLE;
-//                        break;
+                    // ...
                 }
             }
 
@@ -108,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "onSeekProcessed: ");
             }
         });
-        // player.seekTo(0, 1);
     }
 
     @Override
